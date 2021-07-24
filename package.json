@@ -1,0 +1,37 @@
+{
+    "name": "@mangosteen/batch-utils",
+    "version": "1.0.0",
+    "description": "Batch up iterables into fixed-size arrays.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "test-publish-npm": "npm pack",
+        "publish-npm": "npm publish --access public",
+        "prepare": "tsc",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/paya-cz/batch-utils.git"
+    },
+    "keywords": [
+        "async",
+        "iterator",
+        "generator",
+        "await",
+        "iterable",
+        "batch",
+        "array"
+    ],
+    "author": "Paya",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/paya-cz/batch-utils/issues"
+    },
+    "homepage": "https://github.com/paya-cz/batch-utils#readme",
+    "devDependencies": {
+        "@types/node": "^14.17.5",
+        "typescript": "^4.3.5"
+    }
+}
