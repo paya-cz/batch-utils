@@ -21,7 +21,7 @@ With [npm](https://www.npmjs.com/) do:
 
 # Basic Usage
 
-```js
+```ts
 import { batchItemsAsync } from '@mangosteen/batch-utils';
 
 (async () => {
@@ -37,7 +37,7 @@ import { batchItemsAsync } from '@mangosteen/batch-utils';
 
 This code will output the following arrays:
 
-```js
+```ts
 [1, 2, 3]
 [4, 5, 6]
 [7, 8, 9]
@@ -46,18 +46,18 @@ This code will output the following arrays:
 
 # Advanced Usage
 
-```js
+```ts
 import fs from 'fs';
-import { lineByLine } from '@mangosteen/line-by-line';
+import { iterateStreamLines } from '@mangosteen/line-by-line';
 import { batchItemsAsync } from '@mangosteen/batch-utils';
 
 (async () => {
     const inputStream = fs.createReadStream('./shakespeare.txt');
-    const lines = lineByLine(inputStream);
+    const lines = iterateStreamLines(inputStream);
     const lineBatches = batchItemsAsync(lines, 100);
 
     for await (const batch of lineBatches) {
-        // sql.batchInsert(batch);
+        // TODO: sql.batchInsert(batch);
         console.log(typeof batch); // Array<string>
     }
 })();
