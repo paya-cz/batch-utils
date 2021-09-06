@@ -5,10 +5,11 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
+        "prebuild": "rimraf dist",
         "build": "tsc",
         "test-publish-npm": "npm pack",
         "publish-npm": "npm publish --access public",
-        "prepare": "tsc",
+        "prepublish": "npm run build",
         "test": "jest"
     },
     "repository": {
@@ -32,6 +33,7 @@
     "homepage": "https://github.com/paya-cz/batch-utils#readme",
     "devDependencies": {
         "@types/node": "^14.17.5",
+        "rimraf": "^3.0.2",
         "typescript": "^4.3.5"
     }
 }
